@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommender</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Cherish&family=Condiment&family=Kotta+One&family=Luxurious+Roman&family=Milonga&family=New+Rocker&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Romanesco&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lumanosimo&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="recnavbar">
+          <p class="reclogo">Book Recommender</p>
+          <div id = "form_recommend">
+            <form action="/recommend_books" method="post" >
+                <input class = "recsearchbar" type="search" name="userinput" id="inputtext" placeholder="Explore our library.." >
+                <button type="submit" class="recbuttonicon">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+          </div>
+          <ul class="recnavul">
+            <li class="recnavli"><a class="recnava" href="/home">Home</a></li>
+            <li class="recnavli"><a href="/about"class="recnava">About Us</a></li>
+            <li class="recnavli"><a href="/login"class="recnava">Login</a></li>
+            <li class="recnavli"><a href="/contact"class="recnava">Contact</a></li>
+            </ul>
+        </nav>
+      </header>
+
+      <section class = "recsection">
+        <main>
+          <div id = "recommended_books">
+              {%if data %}
+                  {% for i in data %}
+                  <div class = "rbooks">
+                      <img src="{{i[2]}}" alt="No Image Found" class="imgofbook">
+                      <div class="baname">
+                          <p class="recbname">{{i[0]}}</p>
+                          <p class="recaname">"{{i[1]}}"</p>
+                      </div>
+                  </div>
+                  {% endfor %}
+              {% endif %}
+          </div>
+      </main>
+  </section>
+
+</body>
+</html>

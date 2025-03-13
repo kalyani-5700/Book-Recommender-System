@@ -1,0 +1,42 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.rcontainer{
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: indianred;
+}
+.regform{
+    height: 40rem;
+    width: 30rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.regform h1{
+    text-align: center;
+}
+.flname{
+    display: flex;
+    justify-content: space-around;
+}
+.regsubmit{
+    text-align: center;
+    cursor: pointer;
+    text-align: center;
+    height: 4rem;
+    width: 9rem;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    background-color: black;
+    position: relative;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}

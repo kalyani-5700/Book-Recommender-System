@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation System</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Cherish&family=Condiment&family=Kotta+One&family=Luxurious+Roman&family=Milonga&family=New+Rocker&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Romanesco&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lumanosimo&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+</head>
+<body class="body">
+    <header class="header">
+        <nav class="navbar">
+            <p class="logo">Book Recommender</p>
+            <ul class="navul">
+                <li class="navli"><a class="nava" href="/home">Home</a></li>
+                <li class="navli"><a class="nava" href="/Recommender">Recommender</a></li>
+                <li class="navli"><a class="nava" href="/about">About Us</a></li>
+                <li class="navli"><a class="nava" href="/login">Login</a></li>
+                <li class="navli"><a class="nava" href="/contact">Contact</a></li>
+              </ul>
+        </nav>
+        <div class="headcontainer">
+            <div class="sbarquote">
+                <form action="/recommend_books" method="post" >
+                    <input class = "searchbar" type="search" name="userinput" id="inputtext" placeholder="Find your next favorite book..." >
+                    <button type="submit" class="buttonicon">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+        <div class="quote">
+            " Books are the quitest and most constant of friend; they are the most accessible and wisest counselors, and the most patient of the teachers ! "
+        </div>
+    </div>
+
+        <div class="quoteimg">
+            <img class="imghome" src="/static/hero-banner.png" alt="No Images Found">
+        </div>
+    </div>
+    </header>
+
+    <main class="main">
+        <h1 id = "fbookhead"><i class="fa-solid fa-book"></i> Featured Books <i class="fa-solid fa-book"></i></h1>
+        <div class="top10books">
+    
+          <div class="featuredbooks">
+            <img src="https://images.amazon.com/images/P/0345339681.01.LZZZZZZZ.jpg" class="bookimg" alt="No Image Found"> 
+            <div class="baname">
+            <p class="bname">The Hobbit : The Enchanting Prelude to The Lord of the Rings</p><br>
+            <p class="aname">By : J.R.R. TOLKIEN</p>
+          </div>
+        </div>
+          
+          <div class="featuredbooks">
+            <img src="http://images.amazon.com/images/P/0385504209.01.LZZZZZZZ.jpg" class="bookimg" alt="No Image Found"> 
+            <div class="baname">
+            <p class="bname">The Da Vinci Code</p><br>
+            <p class="aname">By : Dan Brown</p>
+          </div>
+        </div>
+    
+          <div class="featuredbooks">
+            <img src="http://images.amazon.com/images/P/0786868716.01.LZZZZZZZ.jpg" class="bookimg" alt="No Image Found"> 
+            <div class="baname">
+            <p class="bname">The Five People You Meet in Heaven</p><br>
+            <p class="aname">By : Mitch Albom</p>
+          </div>
+        </div>
+          
+          <div class="featuredbooks">
+            <img src="http://images.amazon.com/images/P/0316769487.01.LZZZZZZZ.jpg" class="bookimg" alt="No Image Found"> 
+            <div class="baname">
+            <p class="bname">The Catcher in the Rye</p><br>
+            <p class="aname">By : J.D. Salinger</p>
+          </div>
+        </div>
+          
+          <div class="featuredbooks">
+            <img src="http://images.amazon.com/images/P/0316666343.01.LZZZZZZZ.jpg" class="bookimg" alt="No Image Found"> 
+            <div class="baname">
+            <p class="bname">The Lovely Bones: A Novel</p><br>
+            <p class="aname">By : Alice Sebold</p>
+          </div>
+        </div>
+          
+          <div class="featuredbooks">
+            <img src="http://images.amazon.com/images/P/0451524934.01.LZZZZZZZ.jpg" class="bookimg" alt="No Image Found"> 
+            <div class="baname">
+              <p class="bname">1984</p><br>
+              <p class="aname">By : George Orwell</p>
+          </div>
+        </div>
+          
+          <div class="featuredbooks">
+            <img src="http://images.amazon.com/images/P/0060959037.01.LZZZZZZZ.jpg" class="bookimg" alt="No Image Found"> 
+            <div class="baname">
+            <p class="bname">Prodigal Summer: A Novel</p><br>
+            <p class="aname">By : Barbara Kingsolver</p>
+          </div>
+        </div>
+    
+          <div class="featuredbooks">
+            <img src="http://images.amazon.com/images/P/0439136350.01.LZZZZZZZ.jpg" class="bookimg" alt="No Image Found"> 
+           <div class="baname">
+            <p class="bname">Harry Potter and the Prisoner of Azkaban (Book 3)</p><br>
+            <p class="aname">By : J. K. Rowling</p>
+          </div>
+        </div>
+          
+          <div class="featuredbooks">
+            <img src="http://images.amazon.com/images/P/0380789019.01.LZZZZZZZ.jpg" class="bookimg" alt="No Image Found"> 
+            <div class="baname">
+            <p class="bname">Neverwhere</p><br>
+            <p class="aname">By : Neil Gaiman</p>
+          </div>
+        </div>
+          
+          <!-- <div class="featuredbooks">
+            <img src="http://images.amazon.com/images/P/0142001740.01.LZZZZZZZ.jpg" class="bookimg" alt="No Image Found"> 
+            <h3>The Secret Life of Bees</h3>
+            <h3>By : Sue Monk Kidd</h3>
+          </div> -->
+    
+        </div>
+        </div> 
+    </main>
+
+    <footer class="footer">
+        <div class="footercontent">
+          <div class="footermenu">
+            <ul id = "footul">
+              <li class="footli"><a href="/"class="foota">Home</a></li>
+              <li class="footli"><b>|</b></li>
+              <li  class="footli"><a href="/about"class="foota">About</a></li>
+              <li class="footli"><b>|</b></li>
+              <li class="footli"><a href="/contact"class="foota">Contact</a></li>
+              <li class="footli"><b>|</b></li>
+              <li class="footli"><a href="/Recommender"class="foota">Recommendations </a></li>
+            </ul>
+          </div>
+          <div class="footcon">
+              <p><i class="fa-regular fa-copyright"></i> COPYRIGHT 2024 LEXISNEXIS INDIA. ALL RIGHTS RESERVED</p><br>
+              <p><a class="footconcon" href="#">1800-43-5335(Toll Free)</a>
+                <i class="fa-solid fa-envelope"></i><a class="footconcon" href="">bookrecommendsystemVK@gmail.com</a>
+              </p><br>
+              <div class="smicon">
+                <div class="fb">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <div class="insta">
+                  <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                </div>
+                <div class="twitter">
+                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+                <div class="linkedin">
+                  <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="yt">
+                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+              </div><br>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>
